@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="mainFrame" class="todo.ui.MainFrame" init-method="init">
+        <property name="title">
+            <value>Age Calculator</value>
+        </property>
+
+        <property name="contentPane">
+            <ref bean="mainPanel" />
+        </property>
+    </bean>
+
+    <bean id="mainPanel" class="todo.ui.BoxLayoutPanel" init-method="init">
+        <property name="axis1">
+            <value>1</value>
+        </property>
+
+        <property name="panelComponents1">
+            <list>
+                <ref bean="itemScrollPane" />
+                <ref bean="buttonPanel" />
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="itemScrollPane" class="javax.swing.JScrollPane">
+        <constructor-arg>
+            <ref bean="itemTable" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="buttonPanel" class="todo.ui.BoxLayoutPanel" init-method="init">
+        <property name="axis1">
+            <value> 0 </value>
+        </property>
+        <property name="panelComponents1">
+            <list>
+
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="itemTable" class="javax.swing.JTable">
+
+    </bean>
+</beans>
