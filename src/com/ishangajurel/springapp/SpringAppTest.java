@@ -8,7 +8,7 @@ public class SpringAppTest extends TestCase {
         int age = 109;
         SpringApp sa = new SpringApp();
         sa.setAge(age);
-        assertEquals(sa.getAge(),age);
+        assertEquals(sa.getAge(),age+1);
     }
 
     public void testSetAge() {

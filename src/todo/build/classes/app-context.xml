@@ -44,6 +44,27 @@
     </bean>
 
     <bean id="itemTable" class="javax.swing.JTable">
+        <property name="model" >
+            <ref bean="itemTableModel" />
+        </property>
 
     </bean>
+
+    <bean id="itemTableModel" class="todo.ui.ItemTableModel">
+        <property name="itemList">
+            <ref bean="itemList" />
+        </property>
+
+    </bean>
+
+    <bean id="itemList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>Ishan</value>
+                <value>Gajurel</value>
+                <value>Nepal</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
 </beans>
